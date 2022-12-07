@@ -15,43 +15,51 @@ Route::get('/story/search-results', [StoryController::class, 'search'])->name('s
 // story details
 Route::get('/story/{id}', [StoryController::class, 'find'])->name('details');
 
-// show create new story
-Route::get('/publish-new', [StoryController::class, 'create'])->name('publishNew')->middleware('auth');
+Route::group(['middleware' => 'guest'], function () {
+    // show register form
+    Route::get('/register', [UserController::class, 'create'])->name('register');
 
-// store new story
-Route::post('/store-new', [StoryController::class, 'store'])->name('newStory')->middleware('auth');
+    // create users
+    Route::post('/user', [UserController::class, 'store'])->name('userCreate');
 
-// show edit form view
-Route::get('/story/edit/{id}', [StoryController::class, 'edit'])->name('editStory')->middleware('auth');
+    // show login form
+    Route::get('/login', [UserController::class, 'login'])->name('login');
 
-// update story
-Route::put('/story/update/{story}', [StoryController::class, 'update'])->name('updateStory')->middleware('auth');
+    // login submit
+    Route::post('/user/authenticate', [UserController::class, 'authenticate'])->name('authenticate');
+});
 
-// delete story
-Route::delete('/story/delete/{story}', [StoryController::class, 'delete'])->name('deleteStory')->middleware('auth');
+Route::group(['middleware' => 'auth'], function () {
+    
+    // logout user
+    Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
-// show register form
-Route::get('/register', [UserController::class, 'create'])->name('register')->middleware('guest');
+    // manage my stories
+    Route::get('/manage-story', [StoryController::class, 'manage'])->name('manageStory');
 
-// create users
-Route::post('/user', [UserController::class, 'store'])->name('userCreate')->middleware('guest');
+    // show create new story
+    Route::get('/publish-new', [StoryController::class, 'create'])->name('publishNew');
 
-// show login form
-Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
+    // store new story
+    Route::post('/store-new', [StoryController::class, 'store'])->name('newStory');
 
-// login submit
-Route::post('/user/authenticate', [UserController::class, 'authenticate'])->name('authenticate')->middleware('guest');
+    // show edit form view
+    Route::get('/story/edit/{id}', [StoryController::class, 'edit'])->name('editStory');
 
-// logout user
-Route::post('/logout', [UserController::class, 'logout'])->name('logout')->middleware('auth');
+    // update story
+    Route::put('/story/update/{story}', [StoryController::class, 'update'])->name('updateStory');
 
-// manage my stories
-Route::get('/manage-story', [StoryController::class, 'manage'])->name('manageStory')->middleware('auth');
+    // delete story
+    Route::delete('/story/delete/{story}', [StoryController::class, 'delete'])->name('deleteStory');
 
+});
+
+// about
 Route::get('/about', function () {
     return view('about');
 })->name('about');
 
+// contact
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');

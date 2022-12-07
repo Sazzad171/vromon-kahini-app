@@ -4281,6 +4281,14 @@ table.prodactInfoTabel tbody tr td .price {
 
 /* custom */
 .search-form .heading {
-	font-size: 26px;
-	font-weight: 600;
+	font-size: 40px;
+    font-weight: 700;
+    line-height: 38px;
+}
+
+.innerpage-title-area.home-title {
+	min-height: 50vh;
+}
+.innerpage-title-area.home-title .innerpage-titile {
+    margin: 14vh auto 40px;
 }

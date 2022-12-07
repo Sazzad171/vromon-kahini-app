@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('main-content')
-<section class="innerpage-title-area travel-tips-title">
+<section class="innerpage-title-area home-title travel-tips-title">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
