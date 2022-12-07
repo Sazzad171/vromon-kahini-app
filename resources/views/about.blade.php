@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-md-7">
                 <div class="section-title">
-                    <h3>Hey, I am Jhon Brief History <span>About Me.</span></h3>
+                    <h3>Hey, I am Sazzad Brief History <span>About Me.</span></h3>
                 </div>
             </div>
             <div class="col-md-5">
@@ -155,112 +155,4 @@
     </div>
 </section>
 
-
-<section class="about-page-brand-slider bg-lightGray">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="brand-slider-wrapper">
-                    <div class="bsw-silder owl-carousel owl-theme">
-                        <div class="item">
-                            <div class="single-bsw-item">
-                                <img src="images/brand-logo-1.png" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="single-bsw-item">
-                                <img src="images/brand-logo-2.png" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="single-bsw-item">
-                                <img src="images/brand-logo-3.png" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="single-bsw-item">
-                                <img src="images/brand-logo-4.png" alt="">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="single-bsw-item">
-                                <img src="images/brand-logo-2.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="what-customer-says-area section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-7">
-                <div class="section-title">
-                    <h3>What <span>Customer Says</span> About Us?</h3>
-                </div>
-            </div>
-            <div class="col-md-5">
-                <div class="section-paragraph">
-                    <p>I wasn&rsquo;t sure what to expect when I went to Tbilisi. What I assumed would be a drab
-                        (but interesting) city was actually a vibrant, beautiful destination with great food and
-                        plenty of history. It&rsquo;s the kind of place you can easily feel at home at and after
-                        spending a few days there it&rsquo;s clear 72 hours is not enough time. </p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="customer-review-slider wow fadeInUp" data-wow-delay=".20s">
-                    <div class="owl-carousel c-review-carousel">
-                        <div class="item">
-                            <div class="single-creview">
-                                <div class="screview-text">
-                                    <p>I really liked the free version but the adds were annoying so I bought the
-                                        pro version. While it's still a great app and perfect for people who can't
-                                        get to a gym I don't understand why some of the features from the free
-                                        version are missing in the pro.</p>
-                                </div>
-                                <div class="screview-author">
-                                    <h4>Paul Walker</h4>
-                                    <p>Actor</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="single-creview">
-                                <div class="screview-text">
-                                    <p>I really liked the free version but the adds were annoying so I bought the
-                                        pro version. While it's still a great app and perfect for people who can't
-                                        get to a gym I don't understand why some of the features from the free
-                                        version are missing in the pro.</p>
-                                </div>
-                                <div class="screview-author">
-                                    <h4>Johnney Depp</h4>
-                                    <p>American Actor</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="single-creview">
-                                <div class="screview-text">
-                                    <p>I really liked the free version but the adds were annoying so I bought the
-                                        pro version. While it's still a great app and perfect for people who can't
-                                        get to a gym I don't understand why some of the features from the free
-                                        version are missing in the pro.</p>
-                                </div>
-                                <div class="screview-author">
-                                    <h4>Robert Downey</h4>
-                                    <p>American Actor</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 @endsection

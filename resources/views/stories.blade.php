@@ -1,12 +1,12 @@
 @extends('layout.main')
 
 @section('main-content')
-<section class="innerpage-title-area home-title travel-tips-title">
+<section class="innerpage-title-area travel-tips-title">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="innerpage-titile">
-                    <h2>Welcome to Vromon Kahini</h2>
+                    <h2>Our All Travel Stories</h2>
                 </div>
             </div>
         </div>
@@ -16,29 +16,25 @@
 
 <section class="want-toGo-area section-padding">
     <div class="container">
-        <div class="row">
-            <div class="col-md-7">
-                <div class="section-title">
-                    <h3>Start <span>Planning</span> Next Adventure Here.</h3>
-                </div>
+        {{-- search --}}
+        <div class="row align-items-center mb-4">
+            <div class="col-md-8">
+                <h6 class="text-center text-lg-left mb-3">Search here for your desired</h6>
             </div>
-            <div class="col-md-5">
-                <div class="section-paragraph">
-                    <p>I wasn&rsquo;t sure what to expect when I went to Tbilisi. What I assumed would be a drab
-                        (but interesting) city was actually a vibrant, beautiful destination with great food and
-                        plenty of history. It&rsquo;s the kind of place you can easily feel at home at and after
-                        spending a few days there it&rsquo;s clear 72 hours is not enough time. </p>
+            <div class="col-lg-4">
+                <div class="search-form">
+                    <form action="{{ route('search') }}" class="d-flex">
+                        <input type="text" name="search" class="form-control" placeholder="Search Here..." id="">
+                        <button class="btn">Search</button>
+                    </form>
                 </div>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-12">
-                <h1 class="fs-heading text-center font-weight-bold">Featured Stories</h1>
-            </div>
 
-            @unless (count($story) === 0)
-            @foreach ($story as $item)
+            @unless (count($stories) === 0)
+            @foreach ($stories as $item)
                 <div class="col-md-4">
                     <div class="single-tat">
                         <div class="stat-img">
@@ -76,6 +72,23 @@
             @endunless
             
         </div>
+
+        {{-- pagination --}}
+        @if ($stories->lastPage() > 1 )
+            <ul class="pagination justify-content-center">
+                <li class="page-item  {{ $stories->currentPage() == 1 ? ' disabled' : '' }}">
+                    <a class="page-link" href="{{ $stories->url(1) }}">Previous</a>
+                </li>
+                @for ($i = 1; $i <= $stories->lastPage(); $i++)
+                    <li class="page-item {{ $stories->currentPage() == $i ? ' active' : '' }}">
+                        <a class="page-link" href="{{ $stories->url($i) }}">{{ $i }}</a>
+                    </li>
+                @endfor
+                <li class="page-item {{ $stories->currentPage() == $stories->lastPage() ? ' disabled' : '' }}">
+                    <a class="page-link" href="{{ $stories->url($stories->currentPage() + 1) }}">Next</a>
+                </li>
+            </ul>
+        @endif
     </div>
 </section>
 @endsection

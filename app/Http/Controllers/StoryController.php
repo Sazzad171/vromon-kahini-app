@@ -11,7 +11,10 @@ class StoryController extends Controller
 {
     // get all story
     public function index() {
-        $story = Story::where('status', 'Active')->orderBy('updated_at', 'desc')->paginate(3);
+        $story = Story::where('status', 'Active')
+            ->orderBy('updated_at', 'desc')
+            ->take(6)
+            ->get();
 
         return view('home', ['story' => $story]);
     }
@@ -26,6 +29,13 @@ class StoryController extends Controller
         else {
             abort('404');
         }
+    }
+
+    // stories page
+    public function stories() {
+        $stories = Story::where('status', 'Active')->orderBy('updated_at', 'desc')->paginate(9);
+
+        return view('stories', ['stories' => $stories]);
     }
 
     // search result

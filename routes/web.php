@@ -15,6 +15,9 @@ Route::get('/story/search-results', [StoryController::class, 'search'])->name('s
 // story details
 Route::get('/story/{id}', [StoryController::class, 'find'])->name('details');
 
+// story page
+Route::get('/stories', [StoryController::class, 'stories'])->name('stories');
+
 Route::group(['middleware' => 'guest'], function () {
     // show register form
     Route::get('/register', [UserController::class, 'create'])->name('register');

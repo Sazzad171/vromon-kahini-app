@@ -4292,3 +4292,7 @@ table.prodactInfoTabel tbody tr td .price {
 .innerpage-title-area.home-title .innerpage-titile {
     margin: 14vh auto 40px;
 }
+.fs-heading {
+	color: #333333;
+    font-size: 40px;
+}
